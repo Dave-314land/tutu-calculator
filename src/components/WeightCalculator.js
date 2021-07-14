@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import tutuFull from "../img/Tutu-Atwell-Full.png";
+import tutuFull from "../img/Tutu-Atwell.png";
 
 function WeightCalculator() {
   const [weight, setWeight] = useState(0);
@@ -15,14 +15,6 @@ function WeightCalculator() {
   const convertTutu = (e) => {
     calculateTutu();
     setShowTutus(!showTutus);
-
-    if (userTutuWeight < 1) {
-      console.log("first");
-    } else if (userTutuWeight > 1) {
-      console.log("second");
-    } else {
-      console.log("does not compute");
-    }
     e.preventDefault();
   };
 
