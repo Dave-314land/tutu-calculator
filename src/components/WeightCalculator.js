@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import tutuFull from "../img/Tutu-Atwell.png";
 
 function WeightCalculator() {
-  const [weight, setWeight] = useState(0);
+  const [weight, setWeight] = useState(165);
   const [userTutuWeight, setUserTutuWeight] = useState(0);
   const [showTutus, setShowTutus] = useState(false);
 
@@ -14,8 +14,14 @@ function WeightCalculator() {
 
   const convertTutu = (e) => {
     calculateTutu();
-    setShowTutus(!showTutus);
+    setShowTutus(true);
     e.preventDefault();
+  };
+
+  const reset = () => {
+    setShowTutus(false);
+    setWeight(165);
+    setUserTutuWeight(0);
   };
 
   return (
@@ -39,13 +45,26 @@ function WeightCalculator() {
               }}
             />
           </div>
-          <div className="mb-5">
+          <div
+            className="d-grid
+                        gap-3
+                        d-lg-flex
+                        justify-content-md-center
+                        my-3"
+          >
             <button
               type="button"
               onClick={convertTutu}
               className="btn btn-primary btn-lg px-4 gap-3"
             >
               Calculate Tutu's
+            </button>
+            <button
+              type="button"
+              onClick={reset}
+              className="btn btn-primary btn-lg px-4 gap-3"
+            >
+              Reset
             </button>
           </div>
         </form>
